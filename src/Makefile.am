@@ -18,6 +18,9 @@ gmediarender_SOURCES += \
 	output_gstreamer.c  output_gstreamer.h
 endif
 
+gmediarender_SOURCES += \
+	output_dummy.c output_dummy.h
+
 main.c : git-version.h
 
 git-version.h: .FORCE

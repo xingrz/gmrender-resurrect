@@ -40,16 +40,14 @@
 #ifdef HAVE_GST
 #include "output_gstreamer.h"
 #endif
+#include "output_dummy.h"
 #include "output.h"
 
 static struct output_module *modules[] = {
 #ifdef HAVE_GST
 	&gstreamer_output,
-#else
-	// this will be a runtime error, but there is not much point
-	// in waiting till then.
-#error "No output configured. You need to ./configure --with-gstreamer"
 #endif
+	&dummy_output,
 };
 
 static struct output_module *output_module = NULL;
